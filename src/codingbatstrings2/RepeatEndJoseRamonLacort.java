@@ -11,13 +11,13 @@ package codingbatstrings2;
  */
 public class RepeatEndJoseRamonLacort {
 public String repeatEnd(String str, int n) {
-String end;
+String ultimo;
 String resultado = "";
  
-end = str.substring(str.length() - n, str.length());
+ultimo = str.substring(str.length() - n, str.length());
  
 for(int i = 0; i < n; i++) {
-resultado += end;
+resultado += ultimo;
 }
 return resultado;
 }
