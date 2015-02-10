@@ -44,7 +44,7 @@ public class EjerciciosLogic2JoseRamonLacortMartinez {
     if(you<= 2 || date<= 2){
         return 0;
     }
-    else if (you>=8 || date>=8){
+    else if (you >=8 || date>=8){
     return 2;
     }
     else{ 
@@ -55,17 +55,193 @@ public class EjerciciosLogic2JoseRamonLacortMartinez {
   
   
   
-    
+  /*1 usamos el if para que si la temperatura este entre 60 y 90 de verdadero.
+    2 Usamos otra vez if para decir que si es verano y la temperatura esta entre
+    60 y 100 de verdadero.
+    3 Si no ocurre ninguno de estos casos devulve false
+  
+  */
+  public boolean squirrelPlay(int temp, boolean isSummer) {
+     if(temp>= 60 && temp<= 90){
+        return true;
+     }
+     if (isSummer && temp>= 60 && temp<=100){
+        return true;
+     }
+     else {
+        return false;
+     }
+}
   
   
+  /*
+  1 Usamos los if para que los dias que sea tu cumpleaños,
+  si la velocidad es igual o menor que 65 devulve 0
+  si es entre 65 y 85 devuelve 1 y si es igual o mayor de 86 da 2
+  2 Ahora usamos los if para cuando no es cumpleaños
+  si la velocidad es igual o menor de 60 da 0
+  si la velocidad esta entre 60 y 80 da 1
+  3 Si no ocurre esto usando else retornamos 2
+  */
   
+public int caughtSpeeding(int speed, boolean isBirthday) {
+   if ( speed <= 65 && isBirthday){
+   return 0;
+   }
+  if ( speed > 65 && speed <= 85 && isBirthday == true ){
+   return 1;
+   }
+  if ( speed >= 86 && isBirthday){
+   return 2;
+   }
+
+   if ( speed <= 60 ){
+   return 0;
+   }
+  if ( speed > 60 && speed <= 80 ){
+   return 1;
+   }
+
+  else
+   return 2;
+   
+} 
   
+ /* Instamos una nueva int llamada z, que es igual a la suma de a + b.
+    Usando if decimos que si z es igual a un resultado ente 10 y 19 retorne 20.
+    Si no ocurre esto, que retorne z
+
+*/
+ public int sortaSum(int a, int b) {
+    int z;
+    z = a + b;
+    if(z>=10 && z<=19){
+        return 20;
+    }
+    else{
+    return z;
+    }
+}
+
+ 
+ /*1.Usamos un primer if y decimos que si es vacaciones y es dia de diario retorne 10:00
+   2. Otro if para que si es vaciones y es fin de semana nos devuelva off.
+   3. El ultimo if lo usamos para que si no es vacaciones y es dia de diario 
+    devulva 7:00.
+ 4. Por ultimo si no ocurre estios casos que que devuelva 10:00
+ 
+ */
+ 
+public String alarmClock(int day, boolean vacation) {
+  if (vacation && day == 1 || vacation  && day == 2 || vacation && day == 3 || vacation  && day == 4|| vacation  && day == 5 ){
+    return "10:00";
+  }
+  if (vacation && day==0 || vacation  && day == 6){
+    return "off";
+  }
+  if ( day == 1 ||   day == 2 ||   day == 3 ||   day == 4||  day == 5){
+     return "7:00";
+  }
+  else{
+    return "10:00";
+  }
+ 
+}
+
+
+/*
+1.Creamos 2 int una llamada suma(suma de a y b) y otra resta (resta de a y b).
+2.Con un primer if hacemos que si a o b son igual a 6 nos devuelva true.
+3. Usamos otro if para que la suma si es 6 devuelva true.
+4. Con el ultimo if Hacemos que si la resta sea 6, aunque utilizamos tambien 
+Math.abs(para dar el valor absoluto), nos devuelva true.
+5 Si no ocurre nada de los anteriores casos con else nos devuelve false.
+*/
+
+public boolean love6(int a, int b) {
+    int suma = a + b;
+    int resta = a - b;
+    if( a == 6 || b == 6){
+         return true;
+    }
+    if (suma == 6){
+        return true;
+    }
+    if (Math.abs(resta) == 6){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+/*
+1. Usamos um if para que si outsideMode es falso y n esta entre 1 y 10 incluyendolos 
+retorne true.
+2. Con otro if si otsideMode es verdadero y n es igual o inferior a 1 o igual o 
+superior a 10 retorne true.
+3. Si no pasa nada de esto con eslse retorna false.
+*/
   
+public boolean in1To10(int n, boolean outsideMode) {
+
+    if(outsideMode == false && n>= 1 && n<= 10){
+        return true;
+    }
+    if(outsideMode && n<=1 || outsideMode && n>=10 ){
+        return true;
+    }
+    else{
+        return false;
+    }
+
   
+}
+
+/*
+1.Nos dan el operador % que sirve para saber el resto que nos da.
+2. Con if y % sabemos que si un numero dividido entre 11 da de resto 0 es multiplo 
+y nos tiene que retornar verdadero.
+3. Con otro if hacemos lo mismo que en el anterior pero esta vez de resultado da 
+1 el resto y nos tiene que devolver true
+4. Si no ocurre esto tiene que devolver false con else
+*/
   
-  
-  
-  
+public boolean specialEleven(int n) {
+   if (n % 11== 0){
+        return true;
+   }
+   if (n % 11 == 1){
+        return true;
+   }
+   else{
+        return false;
+   }
+}
+
+
+
+/*
+Usamos otra vez el operador %
+1 Con if y usando % g¡hacemos que si el resto al dividir n entre 20 da 1 retorne 
+true.
+2. Hacemos lo mismo que en el paso anterior pero esta vez tiene que dar 2 y nos
+volvera a retornar true.
+3. Si no ocurre nada de lo anterior con else retorna false.
+*/
+  public boolean more20(int n) {
+    if( n % 20 == 1){
+        return true;
+    }
+    if (n % 20 == 2){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
   
   
   
