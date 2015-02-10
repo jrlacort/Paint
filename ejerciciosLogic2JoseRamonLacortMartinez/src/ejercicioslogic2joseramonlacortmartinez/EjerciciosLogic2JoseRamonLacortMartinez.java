@@ -244,13 +244,217 @@ volvera a retornar true.
 
   
   
+  /*
+  Usamos el operador % otra vez.
+  1. Usamos if y el operador % para que si n es  multiplo de 3 o 5 nos retorne 
+  false.
+  2. Si en vez de esto n solo es multiplo de uno de los dos nos retorna true.
+  3. Si no ocurre ningun caso anterior devuelve falso.
+  */
+  
+  public boolean old35(int n) {
+    if(n % 3 == 0 && n % 5 == 0){
+        return false;
+    }
+    else
+        if(n % 3 == 0 || n % 5 == 0){
+            return true;
+        }
+   
+    else{
+            return false;
+}
+}
+
+  /*
+  Usamos el operador %.
+  1. Usando if y % hacemos que si n al dividirlo entre 20 da 19 (ya que es el 
+  resto que nos daria si fuera un numero inferior a 20) retorne true 
+  2 Hacemos lo mismo que antes pero esta vez si es igual a 18(el resto que nos 
+  daria si fuese 2 numeros menor) y nos retorna true.
+  3 Si no ocurre ninguno de estos dos casos con else retorna false.
+  */
+  
+  public boolean less20(int n) {
+    if (n % 20 == 19){
+        return true;
+    }
+    if (n % 20 == 18){
+        return true;
+    }
+    else{
+        return false;
+    }
+  }
+
   
   
   
+  /*
+  Usamos el operador %
+  1 Usando el if si el resto de dividir de num entre 10 da 2 o menos retorna true
+  2 Con otro if si el numero es una o cifras que un multiplo de 10 retorna true
+  3 Si no ocurre ninguno de estos casos retorna false
+  */
+  public boolean nearTen(int num) {
+    if (num % 10 <= 2){
+        return true;
+    }
+    if (num % 10 == 9 || num % 10 == 8){
+        return true;
+    }
+    else{
+        return false;
+    }
+  }
+  
+/*
+  1 Creamos un int llamado "suma" que es la suma de a y b.
+  2 Con if si a esta entre 13 y 19 incluyendolos nos retorna 19.
+  3 Con otro if si b esta entre 13 y 19 incluyendolos como antes volvemos a retornar 19
+  4 Si no ocurre ninguno de estos casos retorna suma
+  
+  */  
+ public int teenSum(int a, int b) {
+    int suma = a + b;
+    if (a >= 13 && a <=19){
+        return 19;
+    }
+    if (b >= 13 && b <= 19){
+        return 19;
+    }
+    else{
+        return suma;
+    }
+} 
   
   
+ /*
+ 1 Si isAsleep es true, nos retorna false.
+ 2 Si isMorning y isMom es true, retorna true.
+ 3 Si isMorning es true, retorna false.
+ 4 Si no ocurren estos casos retorna true.
+ */
+ 
+ public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+    if(isAsleep){
+        return false;
+    }
+    if (isMorning && isMom){
+        return true;
+    }
+    if (isMorning){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+ 
+ 
+ /*
+ 1.Si tea es menor 5 o candy es menor 5 retorna 0
+ 2. Si tea es mayor o igual al doble de candy y viceversa retorna 2.
+ 3. Si no aparece ninguno de estos casos retorna 1;
+ */
+ public int teaParty(int tea, int candy) {
+  if (tea <5 || candy < 5){
+    return 0;
+  }
+  if(tea >= candy*2 || candy >= tea*2){
+    return 2;
+  } 
+  else{
+    return 1;
+  }
+}
   
-    
+ 
+ /*
+ 1. Si el string empieza por f y termina con b retorna FizzBuzz.
+ 2.Si el string empieza por f solo retorna Fizz.
+ 3.Si el string termina en b retorna Buzz.
+ 4. Si no ocurre ninguno de estos casos retorna el string tal y como esta.
+ */
+ public String fizzString(String str) {
+  if(str.startsWith("f") && str.endsWith("b")){
+    return "FizzBuzz";
+  }
+  if(str.startsWith("f")){
+    return "Fizz";
+  }
+  if(str.endsWith("b")){
+    return "Buzz";
+  }
+  else{
+    return str;
+  }
+}
+
+ 
+ /*
+ 1. Si el n es multiplo de 3 y 5 retorna FizzBuzz!.
+ 2. Si n es solo multiplo de 3 retorna Fizz!.
+ 3. Si n es solo multiplo de 5 retorna Buzz!.
+ 4. Si ninguno de los casos anteriors se cumple retorna n + !
+ */
+ public String fizzString2(int n) {
+
+  if (n % 3 == 0 && n % 5 == 0){
+    return "FizzBuzz!";
+  }
+  if(n % 3 == 0){
+    return "Fizz!";
+  }
+  if(n % 5 == 0){
+    return "Buzz!";
+  }
+  else{
+    return n + "!";
+  }
+}
+
+ 
+ /*
+ 1.Si la suma de a y b es igual a c retorna true.
+ 2.Si la suma de a y c es igual a b retorna true.
+ 3.Si la suma de b y c es igual a a retorna true.
+ 4.Si ninguno de los casos anteriores se cumplen retorna false.
+ */
+ public boolean twoAsOne(int a, int b, int c) {
+  if(a + b == c){
+    return true;
+  }
+  if(a + c == b){
+    return true;
+  }
+  if(b + c == a){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     public static void main(String[] args) {
         // TODO code application logic here
     }
