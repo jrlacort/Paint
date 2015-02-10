@@ -437,14 +437,60 @@ volvera a retornar true.
   }
 }
  
+ /*
+ 1.Si b es mayor que a, c es mayor que b y bOk es falso retorna true.
+ 2. Si bOk es verdadero y c es mayor que b retorna true.
+ 3. Si no ocurre ningun caso anterior retorna false.
+ */
+ public boolean inOrder(int a, int b, int c, boolean bOk) {
+  if (b > a && c > b){
+    return true;
+  }
+  if (bOk && c > b){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
  
+ /*
+ 1.Si a es menor que b, a su vez b es menor que c y equalOk es false, retorna true.
+ 2.Si equalOk es true, a es menor o igual a b y b es menor o igual a c retorna true.
+ 3. Si no se cumplen estos casos retorna false.
+ */
+ public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+  if(a < b && b < c){
+    return true;
+  }
+  if(equalOk && a<= b && b <= c){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
  
+ /*
+ 1.Realizamos tres int uno para cada int y seran igual cada uno al resto de ese
+ int al dividirlo de 10, lo que seria igual al digito de la derecha de cada int.
+ 2.Si el ultimo digito de a es igual de b o el de a igual al de c o el de b 
+ igual al de c, retorna true.
+ 3. Si ninguno de estos casos ocurre retorna false.
+ */
  
- 
- 
- 
- 
- 
+ public boolean lastDigit(int a, int b, int c) {
+  int restoA = a % 10;
+  int restoB = b % 10; 
+  int restoC = c % 10;
+  if (restoA == restoB || restoA == restoC || restoB == restoC){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
  
  
  
