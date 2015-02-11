@@ -492,8 +492,126 @@ volvera a retornar true.
 }
 
  
+ /*
+ 1. Hacemos 3 int que sean igual cada una y respectivamente, al valor absoluto de 
+ la resta a y b, al valor absoluto de la resta a y c  y el valor absoluto de la 
+ resta de b y c.
+ 2. Con un if, si alguno de los int puestos son mayor o igual a 10, return true.
+ 3. Si no ocurre ninguno de estos casos return false.
+ */
+ public boolean lessBy10(int a, int b, int c) {
+  int absolutoAB = Math.abs (a - b);
+  int absolutoAC = Math.abs (a - c);
+  int absolutoBC = Math.abs (b - c);
+  
+  if (absolutoAB >= 10 || absolutoAC >= 10 || absolutoBC >= 10){
+    return true;
+  }
+  else{
+    return false;
+  }
+   
+}
  
  
+ .
+ 
+ 
+ .
+ 
+ 
+ /*
+ 1. Ponemos 2 int cada uno sera el resto que da a o b.
+ 2. Si a es igual b, retorna o.
+ 3. Si el resto de a es igual al de b y a es mayor b, retorna b.
+ 4. Si el resto de b es igual al de a y b es mayor a, retorna a.
+ 5. Si es b es mayor que a, retorna b.
+ 6. Si no ocurre estos casos retorna a.
+ */
+ public int maxMod5(int a, int b) {
+  int restoA = a % 5;
+  int restoB = b % 5;
+  if(a == b){
+    return 0;
+  }
+  if(restoA == restoB && a > b){
+    return b;
+  }
+  if(restoB == restoA && b > a){
+    return a;  
+  }  
+  if( a < b){
+    return b;
+  }
+  else{
+    return a;
+  }
+
+ }
+ 
+ /*
+ 1. Usamos if si a es igual a 2, b igual a 2 y c igual a 2, retorna 10.
+ 2. Si a es igual b, a igual a c y b igual c; retorna 5.
+ 3. Si a es diferente de b y c, retorna 1.
+ 4. Si no ocurren estos casos retorna 0.
+ */
+ public int redTicket(int a, int b, int c) {
+  if(a == 2 && b == 2 && c == 2){
+    return 10;
+  }
+  if(a == b && a == c && b == c){
+    return 5;
+  }
+  if(a != b && a != c){
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}
+
+
+ /*
+ 1. Si todos los int son diferentes entre si, retorna 0.
+ 2. Si todos los int son iguales entre si, retorna 20.
+ 3. Si no ocurre ninguno de los pasos anteriores retorna 10.
+ */
+ public int greenTicket(int a, int b, int c) {
+  if(a != b && a != c && b != c){
+    return 0;
+  }
+  if(a == b && a == c && b == c){
+    return 20;
+  }
+  else{
+    return 10;
+  }
+}
+ 
+ 
+ 
+ /*
+ 1. Ponemos 3 int, uno para la suma a y b, otro para la suma b y c y el ultimo
+ para la suma de a y c.
+ 2. Si cualquiera de las sumas es 10 retorna 10.
+ 3. Si la suma ab es 10 veces o mas superior a las otras 2 sumas retorna 5.
+ 4. Si no ocurren estos casos retorna 0.
+ */
+ public int blueTicket(int a, int b, int c) {
+ int ab = a + b;
+ int bc = b + c;
+ int ac = a + c;
+ if(ab == 10 || bc == 10 || ac == 10){
+    return 10;
+ }
+ if(ab >= 10 + bc || ab >= 10 + ac ){
+    return 5;
+ }
+ else{
+    return 0;
+ }
+}
+
  
  
  
