@@ -514,10 +514,10 @@ volvera a retornar true.
 }
  
  
- .
  
  
- .
+ 
+ 
  
  
  /*
@@ -612,11 +612,44 @@ volvera a retornar true.
  }
 }
 
+ /*
+ 1. Si el primer digito de a coincide con el segundo de b o el segundo de a con 
+ el primero de b, retorna true.
+ 2. Si el primer digito de a coincide con el primero de b o el segundo de a con
+ el segundo de b, retorna true.
+ 3. Si no ocurre ninguno de estos casos retorna false.
+ */
+ public boolean shareDigit(int a, int b) {
+  if(a / 10 == b % 10 || a % 10 == b / 10){
+    return true;
+  }
+  if(a / 10 == b / 10 || a % 10 == b % 10){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
  
  
- 
- 
- 
+ /*
+ 1. Declaramos un int(suma de a y b), un string (el string de la suma) y otro 
+ string ( del int a).
+ 2. Si la longitud de los digitos del string a es distinto al string suma 
+ retorna a.
+ 3. Si no ocurre el caso anterior, retorna el int suma.
+ */
+ public int sumLimit(int a, int b) {
+  int suma = a + b;
+  String strSuma = String.valueOf (suma);
+  String strA = String.valueOf (a);
+  if(strA.length () != strSuma.length ()){
+    return a;
+  }
+  else{
+    return suma;
+  }
+}
  
  
     public static void main(String[] args) {
