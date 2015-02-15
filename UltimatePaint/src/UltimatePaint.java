@@ -17,21 +17,24 @@ import java.awt.image.BufferedImage;
  * @author Admin
  */
 public class UltimatePaint extends javax.swing.JFrame {
-
+    //creamos una variable tipo linea
     Line2D.Double linea = new Line2D.Double();
-    
+    //almacena el color
     Color colorSeleccionado = Color.BLACK;
+    //creamos inits  para el tipo de linea
     int discontinua = 0;
     int recta = 0;
-    int psicodelico;
+    int psico = 0;
+    //en una variable de tipo BufferedImage puedo almacenar una imagen
     private BufferedImage buffer = null;
     /**
      * Creates new form UltimatePaint
      */
     public UltimatePaint() {
         initComponents();
+        //la medida del jdialg
         jDialog1.setSize(700,400);
-        
+        //medidas de donde se va a poder dibujar
         int anchoPanel = jPanel1.getWidth();
         int altoPanel = jPanel1.getHeight();
         
@@ -205,11 +208,11 @@ public class UltimatePaint extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Cierra el jDialog1
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jDialog1.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
-
+//seleccionas el color y cierra el jDialog1
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         colorSeleccionado = jColorChooser1.getColor();
         jDialog1.setVisible(false);
@@ -226,6 +229,7 @@ public class UltimatePaint extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+       //Si la recta se pulsa, la pinta, si no pinta discontinua
         if(recta == 1){
             rectaDragged(evt);
         }
@@ -236,6 +240,7 @@ public class UltimatePaint extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jPanel1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseReleased
+         //Si la recta se pulsa, la pinta, si no pinta discontinua
         if(recta == 1){
             rectaRealased(evt);
         }
@@ -244,30 +249,33 @@ public class UltimatePaint extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jPanel1MouseReleased
-
+//cuando se pulse el boton aparece el jDialog1
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
      jDialog1.setVisible(true);
     }//GEN-LAST:event_jButton1MousePressed
-
+    //Se inicia la discontinua y finaliza el trazo normal
     private void jButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MousePressed
      discontinua = 1;
      recta = 0;
+    
 
     }//GEN-LAST:event_jButton4MousePressed
-
+    //Se inicia la recta y la recta y la linea discontinua termina
     private void jButton5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MousePressed
       recta = 1;
       discontinua = 0;
+      
 
     }//GEN-LAST:event_jButton5MousePressed
-
+    //pulsa el boton para que aparezca el dialogo de guardar el documento
     private void jButton6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MousePressed
      int seleccion = jFileChooser2.showSaveDialog(this);
     }//GEN-LAST:event_jButton6MousePressed
 
-    
+    //clase para dibujar la linea recta, junto a la otra clase rectaRealased
     private void rectaDragged (java.awt.event.MouseEvent evt){
         Graphics2D g2 = (Graphics2D) jPanel1.getGraphics();
+        //se repite continuamente este codigo y sirve para poner el grosor de la linea
         g2.setStroke(new BasicStroke(jSlider1.getValue()));
         g2.drawImage(buffer, 0,0, null);
         g2.setStroke(new BasicStroke(jSlider1.getValue()));
@@ -292,7 +300,7 @@ public class UltimatePaint extends javax.swing.JFrame {
         g2 = (Graphics2D) jPanel1.getGraphics();
         g2.drawImage(buffer, 0,0, null);    
     }
-    
+    //dibuja la linea discontinua junto a la clase discontinuaRealased
     private void discontinuaDragged (java.awt.event.MouseEvent evt){
         Graphics2D g2 = (Graphics2D) jPanel1.getGraphics();
         g2.setStroke(new BasicStroke(jSlider1.getValue()));
@@ -323,8 +331,8 @@ public class UltimatePaint extends javax.swing.JFrame {
     }
     
 
-    
 
+    
     
     /**
      * @param args the command line arguments
